@@ -61,7 +61,7 @@ public class GenBean {
 		String authorComment = "/**" + LINE_SEPARATOR;
 		if (config.isGenComment() && !"".equals(tableComment)) authorComment += "*" + tableComment + LINE_SEPARATOR;
 		//		 authorComment+="*@author Bee"+ LINE_SEPARATOR;
-		authorComment += "*@author Honey" + LINE_SEPARATOR;
+		authorComment += "*@author linwb" + LINE_SEPARATOR;
 		//		 authorComment+="*Create on "+format.format(new Date())+ LINE_SEPARATOR;
 		authorComment += "*Create on " + DateUtil.currentDate() + LINE_SEPARATOR; //v1.7.2
 		authorComment += "*/";
@@ -141,7 +141,7 @@ public class GenBean {
 			if (config.isGenComment() && commentMap != null) {
 				comment = commentMap.get(columnName);
 				if (config.getCommentPlace() == 2) {
-					if (!"".equals(comment)) propertiesStr += "\t" + "// " + comment + LINE_SEPARATOR;
+					if (!"".equals(comment)) propertiesStr += "\t" + "/** " + comment +" */"+ LINE_SEPARATOR;
 					propertiesStr += "\t" + "private " + javaType + " " + propertyName + ";" + LINE_SEPARATOR;
 				} else {
 					propertiesStr += "\t" + "private " + javaType + " " + propertyName + ";";
